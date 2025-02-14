@@ -39,13 +39,13 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            eval "$(ssh-agent-s)" 
+            eval "$(ssh-agent -s)" 
             ssh-add ~/.ssh/ssh-praktikan8
             echo "Cek folder project"; 
             [ ! -d "$(HOME}/senpro/494942/modul02/senpro-github-action/" ] &&
               {
                 echo "Repository belum di-clone. Cloning...";
-                mkdir -p-/senpro/494942/modul02;
+                mkdir -p ~/senpro/494942/modul02;
                 cd ~/senpro/494942/modul02; 
                 git clone https://github.com/alisharizkita/senpro-github-action.git
                 cd ~/senpro/494942/modul02/senpro-github-action; 
